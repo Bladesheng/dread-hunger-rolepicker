@@ -23,4 +23,3 @@ COPY --from=builder /app/build /app/build
 WORKDIR /app
 ENV NODE_ENV production
 
-CMD [ "sleep", "5000" ]
