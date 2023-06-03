@@ -1,15 +1,17 @@
 <script>
   import { page } from "$app/stores";
+
+  import { base } from "$app/paths";
 </script>
 
 <header>
   <nav>
     <ul>
       <li>
-        <a href="/">Home</a>
+        <a href="{base}/">Home</a>
       </li>
       <li>
-        <a href="/about">About</a>
+        <a href="{base}/about">About</a>
       </li>
     </ul>
   </nav>

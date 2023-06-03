@@ -7,15 +7,16 @@ const config = {
 
   kit: {
     adapter: adapter({
-      pages: "build",
-      assets: "build",
-      fallback: "index.html",
-      precompress: false,
+      // pages: "build",
+      // assets: "build",
+      // fallback: "index.html",
+      // precompress: false,
     }),
     paths: {
       // https://www.okupter.com/blog/deploy-sveltekit-website-to-github-pages#set-the-base-path
       // because Github pages serves the website from a subfolder, not from root
       base: process.env.NODE_ENV === "production" ? "/dread-hunger-rolepicker-2" : "",
+      relative: false,
     },
   },
 };
