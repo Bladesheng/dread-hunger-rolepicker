@@ -73,6 +73,15 @@ function createPlayersStore() {
 
       console.log("deleted player:", player);
     },
+
+    deleteAll: () => {
+      set({
+        selected: [],
+        unselected: [],
+      });
+
+      console.log("deleted all players");
+    },
   };
 }
 
