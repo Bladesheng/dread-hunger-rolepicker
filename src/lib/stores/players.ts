@@ -1,17 +1,29 @@
 import { writable } from "svelte/store";
 
+import { Storage } from "$lib/storage";
+
 export type IPlayer = {
   id: number;
   name: string;
 };
 
+export type IPlayers = {
+  selected: IPlayer[];
+  unselected: IPlayer[];
+};
+
 let uid = 0;
 
 function createPlayersStore() {
-  const { subscribe, set, update } = writable<{ selected: IPlayer[]; unselected: IPlayer[] }>({
-    selected: [],
-    unselected: [],
-  });
+  // retrieve players from localstorage and assign them fresh ids (to sync up with uid)
+  const storedPlayers = Storage.Players;
+  for (const [key, playersList] of Object.entries(storedPlayers)) {
+    for (const currentPlayer of playersList) {
+      currentPlayer.id = uid++;
+    }
+  }
+
+  const { subscribe, set, update } = writable<IPlayers>(storedPlayers);
 
   return {
     subscribe,
@@ -103,3 +115,8 @@ function createPlayersStore() {
 }
 
 export const Players = createPlayersStore();
+
+// for keeping the store in sync with localstorage
+Players.subscribe((currentPlayers) => {
+  Storage.Players = currentPlayers;
+});
