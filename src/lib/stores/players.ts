@@ -82,6 +82,23 @@ function createPlayersStore() {
 
       console.log("deleted all players");
     },
+
+    rename: (player: IPlayer, newName: string) => {
+      update((currentPlayers) => {
+        // loop over both lists
+        for (const [key, playersList] of Object.entries(currentPlayers)) {
+          for (const currentPlayer of playersList) {
+            if (currentPlayer.id === player.id) {
+              currentPlayer.name = newName;
+            }
+          }
+        }
+
+        return currentPlayers;
+      });
+
+      console.log("renamed player", player, "to", newName);
+    },
   };
 }
 
