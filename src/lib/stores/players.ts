@@ -58,6 +58,21 @@ function createPlayersStore() {
       console.log("created new player in unselected:", newPlayer);
       return newPlayer;
     },
+
+    delete: (player: IPlayer) => {
+      update((currentPlayers) => {
+        return {
+          selected: currentPlayers.selected.filter((currentPlayer) => {
+            return currentPlayer.id !== player.id;
+          }),
+          unselected: currentPlayers.unselected.filter((currentPlayer) => {
+            return currentPlayer.id !== player.id;
+          }),
+        };
+      });
+
+      console.log("deleted player:", player);
+    },
   };
 }
 
