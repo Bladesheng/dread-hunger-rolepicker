@@ -1,4 +1,13 @@
-<script>
+<script lang="ts">
+  import Selected from "./Selected.svelte";
+  import Unselected from "./Unselected.svelte";
+
+  import { Players } from "$lib/stores/players";
+
+  Players.createNew("11111");
+  Players.createNew("22222");
+  Players.createNew("33333");
+  Players.createNew("44444");
 </script>
 
 <svelte:head>
@@ -6,15 +15,11 @@
 </svelte:head>
 
 <section>
-  <h1>
-    <span class="welcome"> welcome </span>
+  <Selected />
 
-    to your new<br />SvelteKit app
-  </h1>
+  <Unselected />
 
-  <h2>
-    try editing <strong>src/routes/+page.svelte</strong>
-  </h2>
+  <h1>Přidělené role</h1>
 </section>
 
 <style>
