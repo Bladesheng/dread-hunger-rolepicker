@@ -1,13 +1,6 @@
 <script lang="ts">
   import Selected from "./Selected.svelte";
   import Unselected from "./Unselected.svelte";
-
-  import { Players } from "$lib/stores/players";
-
-  Players.createNew("11111");
-  Players.createNew("22222");
-  Players.createNew("33333");
-  Players.createNew("44444");
 </script>
 
 <svelte:head>
@@ -15,12 +8,17 @@
 </svelte:head>
 
 <section>
-  <Selected />
-
   <Unselected />
+
+  <Selected />
 
   <h1>Přidělené role</h1>
 </section>
 
 <style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40rem;
+  }
 </style>

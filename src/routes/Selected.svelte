@@ -14,7 +14,11 @@
 
   <ol>
     {#each $Players.selected as player (player.id)}
-      <li in:receive={{ key: player.id }} out:send={{ key: player.id }} animate:flip={flipSettings}>
+      <li
+        in:receive|local={{ key: player.id }}
+        out:send|local={{ key: player.id }}
+        animate:flip={flipSettings}
+      >
         <button
           on:click={() => {
             unselectPlayer(player);
