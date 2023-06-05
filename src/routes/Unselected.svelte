@@ -2,6 +2,7 @@
   import { flip } from "svelte/animate";
   import { send, receive, flipSettings } from "./animations";
 
+  import EditableButton from "./EditableButton.svelte";
   import { Players, type IPlayer } from "$lib/stores/players";
 
   function selectPlayer(player: IPlayer) {
@@ -28,6 +29,8 @@
         </button>
       </li>
     {/each}
+
+    <EditableButton />
   </ol>
 </section>
 
