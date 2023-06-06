@@ -20,3 +20,22 @@ h1 {
 h2 {
   font-size: 1rem;
 }
+
+ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+button,
+input {
+  box-sizing: border-box;
+  height: 2rem;
+  border-radius: 1rem;
+  border: 2px solid red;
+  background-color: grey;
+  outline: none;
+  width: 10rem;
+  text-align: center;
+}

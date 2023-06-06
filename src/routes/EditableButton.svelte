@@ -36,20 +36,18 @@
   }
 </script>
 
-<div>
-  {#if editing}
-    <input
-      use:autofocus
-      bind:value={inputValue}
-      on:keyup={handleKeyup}
-      on:blur={() => {
-        endEdit(inputValue); // save input value on focus loss
-      }}
-    />
-  {:else}
-    <button on:click={startEdit}>+ Nový hráč</button>
-  {/if}
-</div>
+{#if editing}
+  <input
+    use:autofocus
+    bind:value={inputValue}
+    on:keyup={handleKeyup}
+    on:blur={() => {
+      endEdit(inputValue); // save input value on focus loss
+    }}
+  />
+{:else}
+  <button on:click={startEdit}>+ Nový hráč</button>
+{/if}
 
 <style>
 </style>

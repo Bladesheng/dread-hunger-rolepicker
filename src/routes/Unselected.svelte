@@ -8,29 +8,34 @@
   function selectPlayer(player: IPlayer) {
     Players.select(player);
   }
+
+  // so that the editableButton can be inside of the #each block which gives it the flip animation
+  const buttonPlaceholder = { id: -69, name: "" };
 </script>
 
 <section>
   <h1>Ostatní</h1>
 
   <ol>
-    {#each $Players.unselected as player (player.id)}
+    {#each $Players.unselected.concat(buttonPlaceholder) as player (player.id)}
       <li
         in:receive|local={{ key: player.id }}
         out:send|local={{ key: player.id }}
         animate:flip={flipSettings}
       >
-        <button
-          on:click={() => {
-            selectPlayer(player);
-          }}
-        >
-          {player.name}
-        </button>
+        {#if player === buttonPlaceholder}
+          <EditableButton />
+        {:else}
+          <button
+            on:click={() => {
+              selectPlayer(player);
+            }}
+          >
+            {player.name}
+          </button>
+        {/if}
       </li>
     {/each}
-
-    <EditableButton />
   </ol>
 </section>
 
