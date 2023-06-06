@@ -41,8 +41,8 @@ input {
 }
 
 .controls {
-  visibility: hidden;
+  display: none;
 }
 li:hover > .controls {
-  visibility: visible;
+  display: inline-block;
 }
