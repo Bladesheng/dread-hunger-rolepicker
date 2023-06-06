@@ -2,12 +2,9 @@
   import { flip } from "svelte/animate";
   import { send, receive, flipSettings } from "./animations";
 
+  import UnselectedPlayer from "./UnselectedPlayer.svelte";
   import EditableButton from "./EditableButton.svelte";
-  import { Players, type IPlayer } from "$lib/stores/players";
-
-  function selectPlayer(player: IPlayer) {
-    Players.select(player);
-  }
+  import { Players } from "$lib/stores/players";
 
   // so that the editableButton can be inside of the #each block which gives it the flip animation
   const editableButtonPlaceholder = { id: -69, name: "" };
@@ -26,13 +23,7 @@
         {#if player === editableButtonPlaceholder}
           <EditableButton />
         {:else}
-          <button
-            on:click={() => {
-              selectPlayer(player);
-            }}
-          >
-            {player.name}
-          </button>
+          <UnselectedPlayer {player} />
         {/if}
       </li>
     {/each}
@@ -44,7 +35,13 @@
     height: 10rem;
   }
 
+  ol {
+    align-items: flex-start;
+  }
+
   li {
     list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
   }
 </style>

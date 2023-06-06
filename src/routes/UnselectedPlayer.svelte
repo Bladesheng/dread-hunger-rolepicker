@@ -1,14 +1,25 @@
 <script lang="ts">
-  // Button that changes into input element on click.
-  // Changes back to button on focus loss / esc keypress / enter keypress.
+  // Button with unselected player. Clicking it will select the player.
+  // Includes remove button and edit button, which swaps the player button with input for editing name
+  // (similar to editableButton)
+  import { Players, type IPlayer } from "$lib/stores/players";
 
-  import { Players } from "$lib/stores/players";
+  export let player: IPlayer;
 
   let editing = false;
   let inputValue: string;
 
+  function selectPlayer(player: IPlayer) {
+    Players.select(player);
+  }
+
+  function deletePlayer(player: IPlayer) {
+    Players.delete(player);
+  }
+
   function autofocus(element: HTMLInputElement) {
     element.focus();
+    element.value = player.name; // put the current player's name into the input when you start editing
   }
 
   function startEdit() {
@@ -19,7 +30,7 @@
     editing = false;
 
     if (textToSave) {
-      Players.createNew(inputValue);
+      Players.rename(player, textToSave);
     }
 
     inputValue = ""; // clean up the input element
@@ -47,8 +58,27 @@
     }}
   />
 {:else}
-  <button on:click={startEdit}>+ Nový hráč</button>
+  <button
+    on:click={() => {
+      selectPlayer(player);
+    }}
+  >
+    {player.name}
+  </button>
 {/if}
+
+<div class="controls">
+  <button
+    class="delete"
+    on:click={() => {
+      deletePlayer(player);
+    }}
+  >
+    X
+  </button>
+
+  <button class="edit" on:click={startEdit}> edit </button>
+</div>
 
 <style>
 </style>
