@@ -36,7 +36,11 @@
   }
 
   ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
+    gap: 0.2rem;
   }
 
   li {

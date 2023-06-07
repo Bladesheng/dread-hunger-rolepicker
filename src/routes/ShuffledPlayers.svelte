@@ -99,7 +99,14 @@
 
   <ol>
     {#each previousShuffledPlayers as assignment (assignment.player.id)}
-      <li>{assignment.player.name}.....{assignment.role}</li>
+      <li>
+        <span>
+          {assignment.player.name}
+        </span>
+        <span>
+          {assignment.role}
+        </span>
+      </li>
     {/each}
   </ol>
 
@@ -115,4 +122,8 @@
 </section>
 
 <style>
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
 </style>
