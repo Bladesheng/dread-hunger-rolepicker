@@ -72,8 +72,37 @@
     return shuffledPlayers;
   }
 
-  function copyToClipboard(players: IShuffledPlayers) {
-    // TODO
+  // formats players and roles into discord friendly format and copies it into your clipboard
+  async function copyToClipboard(players: IShuffledPlayers) {
+    const lines: string[] = [];
+
+    // to calculate minimum ammount of dots
+    const longestPlayerRole = Math.max(
+      ...players.map(({ player, role }) => {
+        return player.name.length + role.length;
+      })
+    );
+
+    players.forEach(({ player, role }) => {
+      // minimum ammount of dots between name and role
+      const minDots = 3;
+
+      // actual number of dots between name and role
+      let dots = longestPlayerRole - player.name.length - role.length + minDots;
+
+      // override for captain because the anchor emoji is 2 characters wide for some reason
+      if (role === "Captain ⚓") {
+        dots--;
+      }
+
+      lines.push(player.name + ".".repeat(dots) + role);
+    });
+
+    // enable monospace font on discord
+    lines.push("```");
+    lines.unshift("```");
+
+    await navigator.clipboard.writeText(lines.join("\n"));
   }
 
   function handleShuffle() {
@@ -98,13 +127,13 @@
   <h1>Přidělené role</h1>
 
   <ol>
-    {#each previousShuffledPlayers as assignment (assignment.player.id)}
+    {#each previousShuffledPlayers as { player, role } (player.id)}
       <li>
         <span>
-          {assignment.player.name}
+          {player.name}
         </span>
         <span>
-          {assignment.role}
+          {role}
         </span>
       </li>
     {/each}
@@ -118,12 +147,19 @@
       }
     }}>Vylosovat</button
   >
-  <button>Zkopírovat</button>
+  <button
+    on:click={() => {
+      copyToClipboard(previousShuffledPlayers);
+    }}>Zkopírovat</button
+  >
 </section>
 
 <style>
   li {
     display: flex;
     justify-content: space-between;
+  }
+  li:nth-child(odd) {
+    background-color: lightgray;
   }
 </style>
