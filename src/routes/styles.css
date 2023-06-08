@@ -62,10 +62,11 @@ input {
   border-radius: 1rem;
 
   background-color: var(--color-secondary);
+  border: 2px solid var(--color-grey-light);
 
+  text-align: center;
   color: var(--font-color-secondary);
   font-size: 1rem;
-  border: 2px solid var(--color-grey-light);
 }
 button:hover,
 input:hover {
@@ -75,9 +76,10 @@ button:active {
   filter: brightness(1.3) !important;
 }
 
+/* hover toggles visibility of controls for editing and deleting players */
 .controls {
   display: none;
 }
 li:hover > .controls {
-  display: inline-block;
+  display: inline-flex;
 }
