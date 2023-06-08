@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
+  <title>Role Picker</title>
 </svelte:head>
 
 <Unselected />

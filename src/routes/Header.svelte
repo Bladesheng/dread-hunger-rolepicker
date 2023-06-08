@@ -7,7 +7,7 @@
   <nav>
     <ol>
       <li>
-        <a class:selected={$page.route.id === "/"} href="{base}/">Home</a>
+        <a class:selected={$page.route.id === "/"} href="{base}/">Role Picker</a>
       </li>
       <li>
         <a class:selected={$page.route.id === "/about"} href="{base}/about">About</a>
