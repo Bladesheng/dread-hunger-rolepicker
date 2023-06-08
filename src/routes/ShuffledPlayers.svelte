@@ -161,7 +161,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   ol {
@@ -175,5 +175,11 @@
   }
   li:nth-child(odd) {
     background-color: var(--color-secondary);
+  }
+
+  @media screen and (max-width: 960px) and (min-width: 680px) {
+    ol {
+      font-size: 2.1vw;
+    }
   }
 </style>

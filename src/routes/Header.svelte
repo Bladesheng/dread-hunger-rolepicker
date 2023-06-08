@@ -18,7 +18,7 @@
 
 <style>
   header {
-    padding: 16px;
+    padding-top: 1rem;
   }
 
   ol {

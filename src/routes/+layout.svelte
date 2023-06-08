@@ -26,7 +26,7 @@
 
     height: 100vh;
     max-height: 100vh;
-    /* overflow-y: hidden; */
+    overflow-y: auto;
 
     font-family: var(--font-stack);
     color: var(--font-color-primary);
@@ -39,5 +39,12 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (max-width: 680px) {
+    main {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 </style>
