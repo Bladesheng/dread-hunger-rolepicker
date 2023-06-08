@@ -38,7 +38,7 @@
     padding: 4vw;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1.5fr;
   }
 
   @media screen and (max-width: 680px) {

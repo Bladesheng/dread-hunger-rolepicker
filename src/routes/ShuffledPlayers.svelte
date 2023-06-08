@@ -165,21 +165,29 @@
   }
 
   ol {
-    font-size: 1.3rem;
+    --font-size: 1.3rem;
+    font-size: var(--font-size);
+    height: calc(10 * var(--font-size));
   }
 
   li {
     display: flex;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 3ch;
   }
   li:nth-child(odd) {
     background-color: var(--color-secondary);
   }
 
+  span {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
   @media screen and (max-width: 960px) and (min-width: 680px) {
     ol {
-      font-size: 2.1vw;
+      --font-size: 2.1vw;
     }
   }
 </style>
