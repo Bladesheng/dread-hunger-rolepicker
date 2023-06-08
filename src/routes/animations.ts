@@ -1,6 +1,7 @@
 import { quintOut } from "svelte/easing";
 import { crossfade } from "svelte/transition";
 
+// for smoothly moving players between selected and unselected columns
 export const [send, receive] = crossfade({
   duration: (d) => Math.sqrt(d * 200),
 

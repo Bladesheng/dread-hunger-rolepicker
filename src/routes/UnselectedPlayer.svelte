@@ -2,6 +2,7 @@
   // Button with unselected player. Clicking it will select the player.
   // Includes remove button and edit button, which swaps the player button with input for editing name
   // (similar to editableButton)
+
   import { Players, type IPlayer } from "$lib/stores/players";
 
   export let player: IPlayer;

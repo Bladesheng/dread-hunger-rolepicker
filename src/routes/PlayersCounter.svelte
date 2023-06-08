@@ -1,4 +1,6 @@
 <script lang="ts">
+  // Components that shows you how many players are already selected
+
   import { Players } from "$lib/stores/players";
 
   $: playerCount = $Players.selected.length;

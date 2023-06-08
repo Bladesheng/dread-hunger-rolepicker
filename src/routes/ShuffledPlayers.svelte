@@ -1,4 +1,7 @@
 <script lang="ts">
+  // Component for assigning selected players random role.
+  // Remembers who got what role last time and makes sure nobody gets the same role twice in a row
+
   import { Players, type IPlayer } from "$lib/stores/players";
 
   type IShuffledPlayers = {
@@ -39,6 +42,7 @@
     return array;
   }
 
+  // checks if nobody has same role as last time
   function checkIfNoRepeats(current: IShuffledPlayers, previous: IShuffledPlayers) {
     for (const currentPlayer of current) {
       for (const prevPlayer of previous) {
@@ -76,7 +80,7 @@
   async function copyToClipboard(players: IShuffledPlayers) {
     const lines: string[] = [];
 
-    // to calculate minimum ammount of dots
+    // to calculate actual ammount of dots
     const longestPlayerRole = Math.max(
       ...players.map(({ player, role }) => {
         return player.name.length + role.length;

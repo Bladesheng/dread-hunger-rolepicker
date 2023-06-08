@@ -1,4 +1,7 @@
 <script lang="ts">
+  // Component that shows all players that are not selected yet.
+  // You can create new players, select them, rename them or delete them.
+
   import { flip } from "svelte/animate";
   import { send, receive, flipSettings } from "./animations";
 
@@ -6,7 +9,7 @@
   import EditableButton from "./EditableButton.svelte";
   import { Players } from "$lib/stores/players";
 
-  // so that the editableButton can be inside of the #each block which gives it the flip animation
+  // only way to give editableButton the flip animation is to put it inside of the #each block
   const editableButtonPlaceholder = { id: -69, name: "" };
 </script>
 

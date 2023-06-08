@@ -1,4 +1,6 @@
 <script lang="ts">
+  // Component that shows which players are already selected and for unselecting them
+
   import { flip } from "svelte/animate";
   import { send, receive, flipSettings } from "./animations";
 

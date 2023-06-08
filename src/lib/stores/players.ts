@@ -12,8 +12,11 @@ export type IPlayers = {
   unselected: IPlayer[];
 };
 
+// every players is assigned unique ID when they are created (resets on refresh)
 let uid = 0;
 
+// custom store for keeping selected and unselected players in state
+// you can manipulate the players with some basic CRUD methods
 function createPlayersStore() {
   // retrieve players from localstorage and assign them fresh ids (to sync up with uid)
   const storedPlayers = Storage.Players;
@@ -27,6 +30,23 @@ function createPlayersStore() {
 
   return {
     subscribe,
+
+    createNew: (playerName: string) => {
+      const newPlayer: IPlayer = {
+        id: uid++,
+        name: playerName,
+      };
+
+      update((currentPlayers) => {
+        return {
+          selected: currentPlayers.selected,
+          unselected: [...currentPlayers.unselected, newPlayer],
+        };
+      });
+
+      console.log("created new player in unselected:", newPlayer);
+      return newPlayer;
+    },
 
     select: (player: IPlayer) => {
       update((currentPlayers) => {
@@ -54,21 +74,21 @@ function createPlayersStore() {
       console.log("unselected player:", player);
     },
 
-    createNew: (playerName: string) => {
-      const newPlayer: IPlayer = {
-        id: uid++,
-        name: playerName,
-      };
-
+    rename: (player: IPlayer, newName: string) => {
       update((currentPlayers) => {
-        return {
-          selected: currentPlayers.selected,
-          unselected: [...currentPlayers.unselected, newPlayer],
-        };
+        // loop over both lists
+        for (const [key, playersList] of Object.entries(currentPlayers)) {
+          for (const currentPlayer of playersList) {
+            if (currentPlayer.id === player.id) {
+              currentPlayer.name = newName;
+            }
+          }
+        }
+
+        return currentPlayers;
       });
 
-      console.log("created new player in unselected:", newPlayer);
-      return newPlayer;
+      console.log("renamed player", player, "to", newName);
     },
 
     delete: (player: IPlayer) => {
@@ -93,23 +113,6 @@ function createPlayersStore() {
       });
 
       console.log("deleted all players");
-    },
-
-    rename: (player: IPlayer, newName: string) => {
-      update((currentPlayers) => {
-        // loop over both lists
-        for (const [key, playersList] of Object.entries(currentPlayers)) {
-          for (const currentPlayer of playersList) {
-            if (currentPlayer.id === player.id) {
-              currentPlayer.name = newName;
-            }
-          }
-        }
-
-        return currentPlayers;
-      });
-
-      console.log("renamed player", player, "to", newName);
     },
   };
 }

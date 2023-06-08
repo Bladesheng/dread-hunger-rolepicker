@@ -57,7 +57,7 @@ h2 {
 button,
 input {
   width: fit-content;
-  white-space: nowrap; /* no text wrapping, instead wrap the whole button to new line */
+  white-space: nowrap;
   padding: 0.5rem 0.8rem;
   border-radius: 1rem;
 
