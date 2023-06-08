@@ -58,4 +58,10 @@
     border: 2px solid var(--color-red);
     background-color: var(--font-color-red);
   }
+
+  @media screen and (min-width: 680px) {
+    section {
+      grid-row: 1 / 3;
+    }
+  }
 </style>

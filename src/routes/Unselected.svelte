@@ -52,4 +52,10 @@
   li {
     position: relative;
   }
+
+  @media screen and (min-width: 680px) {
+    section {
+      grid-row: 1 / 3;
+    }
+  }
 </style>

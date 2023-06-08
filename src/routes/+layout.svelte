@@ -39,11 +39,13 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr;
   }
 
   @media screen and (max-width: 680px) {
     main {
       grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, min-content);
       gap: 2rem;
     }
   }
