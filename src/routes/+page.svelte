@@ -1,6 +1,7 @@
 <script lang="ts">
   import Selected from "./Selected.svelte";
   import Unselected from "./Unselected.svelte";
+  import PlayersCounter from "./PlayersCounter.svelte";
   import ShuffledPlayers from "./ShuffledPlayers.svelte";
 </script>
 
@@ -12,6 +13,8 @@
   <Unselected />
 
   <Selected />
+
+  <PlayersCounter />
 
   <ShuffledPlayers />
 </section>
