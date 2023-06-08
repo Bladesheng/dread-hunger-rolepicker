@@ -2,6 +2,7 @@
   import { flip } from "svelte/animate";
   import { send, receive, flipSettings } from "./animations";
 
+  import PlayersCounter from "./PlayersCounter.svelte";
   import { Players, type IPlayer } from "$lib/stores/players";
 
   function unselectPlayer(player: IPlayer) {
@@ -11,6 +12,7 @@
 
 <section>
   <h1>Vybraní</h1>
+  <PlayersCounter />
 
   <ol>
     {#each $Players.selected as player (player.id)}
@@ -33,7 +35,10 @@
 
 <style>
   section {
-    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
 
   ol {
@@ -41,10 +46,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.5rem;
   }
 
-  li {
-    list-style-type: none;
+  button {
+    border: 2px solid var(--color-green-dark);
+  }
+  button:hover {
+    border: 2px solid var(--color-red);
+    background-color: var(--font-color-red);
   }
 </style>

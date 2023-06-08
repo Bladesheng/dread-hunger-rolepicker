@@ -68,6 +68,8 @@
 {/if}
 
 <div class="controls">
+  <button class="edit" on:click={startEdit}> edit </button>
+
   <button
     class="delete"
     on:click={() => {
@@ -76,9 +78,20 @@
   >
     X
   </button>
-
-  <button class="edit" on:click={startEdit}> edit </button>
 </div>
 
 <style>
+  .controls {
+    position: absolute;
+  }
+
+  button:hover {
+    border: 2px solid var(--color-green-dark);
+  }
+
+  /* todo: replace buttons with some nice svg icons */
+  .edit {
+  }
+  .delete {
+  }
 </style>

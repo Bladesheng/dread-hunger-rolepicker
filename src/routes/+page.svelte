@@ -1,7 +1,7 @@
 <script lang="ts">
   import Selected from "./Selected.svelte";
   import Unselected from "./Unselected.svelte";
-  import PlayersCounter from "./PlayersCounter.svelte";
+
   import ShuffledPlayers from "./ShuffledPlayers.svelte";
 </script>
 
@@ -9,20 +9,11 @@
   <title>Home</title>
 </svelte:head>
 
-<section>
-  <Unselected />
+<Unselected />
 
-  <Selected />
+<Selected />
 
-  <PlayersCounter />
-
-  <ShuffledPlayers />
-</section>
+<ShuffledPlayers />
 
 <style>
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 40rem;
-  }
 </style>

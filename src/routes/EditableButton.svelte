@@ -51,4 +51,7 @@
 {/if}
 
 <style>
+  button:hover {
+    border: 2px solid var(--color-green-dark);
+  }
 </style>

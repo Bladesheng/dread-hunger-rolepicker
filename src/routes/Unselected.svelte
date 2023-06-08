@@ -32,20 +32,17 @@
 
 <style>
   section {
-    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
 
   ol {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    gap: 0.2rem;
-  }
-
-  li {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
   }
 </style>

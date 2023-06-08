@@ -139,27 +139,41 @@
     {/each}
   </ol>
 
-  <button
-    on:click={() => {
-      // 8 is max ammount of players
-      if ($Players.selected.length <= 8) {
-        handleShuffle();
-      }
-    }}>Vylosovat</button
-  >
-  <button
-    on:click={() => {
-      copyToClipboard(previousShuffledPlayers);
-    }}>Zkopírovat</button
-  >
+  <div class="buttons">
+    <button
+      on:click={() => {
+        // 8 is max ammount of players
+        if ($Players.selected.length <= 8) {
+          handleShuffle();
+        }
+      }}>Vylosovat</button
+    >
+    <button
+      on:click={() => {
+        copyToClipboard(previousShuffledPlayers);
+      }}>Zkopírovat</button
+    >
+  </div>
 </section>
 
 <style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  ol {
+    font-size: 1.3rem;
+  }
+
   li {
     display: flex;
     justify-content: space-between;
+    gap: 3rem;
   }
   li:nth-child(odd) {
-    background-color: lightgray;
+    background-color: var(--color-secondary);
   }
 </style>

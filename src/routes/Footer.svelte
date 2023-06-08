@@ -19,6 +19,6 @@
 
   a {
     text-decoration: none;
-    color: lightskyblue;
+    color: var(--font-color-blue);
   }
 </style>
