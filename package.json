@@ -6,7 +6,7 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --ignore-path .eslintignore --write \"**/*.+(js|ts|json|html|svelte)\"",
+    "format": "prettier --write --no-editorconfig --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --ignore-path .eslintignore .",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.svelte .",
     "docker": "docker compose up --build"
   },

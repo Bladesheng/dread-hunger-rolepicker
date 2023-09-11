@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply bg-zinc-800 px-4 py-2 shadow-md;
+    @apply rounded-full border-2 border-solid border-stone-600;
+    @apply whitespace-nowrap text-center  text-base text-stone-400;
+    @apply hover:brightness-110 active:brightness-125;
+  }
+}

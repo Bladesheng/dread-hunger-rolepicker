@@ -14,19 +14,11 @@
 
 <Selected />
 
-<ShuffledPlayers />
+<section class="flex flex-col gap-6">
+  <ShuffledPlayers />
 
-<section>
-  <RandomSpells />
-  <RandomMap />
+  <section class="flex flex-col gap-6">
+    <RandomSpells />
+    <RandomMap />
+  </section>
 </section>
-
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-  }
-</style>

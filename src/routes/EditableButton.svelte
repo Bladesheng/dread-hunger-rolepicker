@@ -39,6 +39,7 @@
 
 {#if editing}
   <input
+    class="btn"
     use:autofocus
     bind:value={inputValue}
     on:keyup={handleKeyup}
@@ -47,11 +48,5 @@
     }}
   />
 {:else}
-  <button on:click={startEdit}>+ Nový hráč</button>
+  <button class="btn hover:border-green-700" on:click={startEdit}>+ Nový hráč</button>
 {/if}
-
-<style>
-  button:hover {
-    border: 2px solid var(--color-green-dark);
-  }
-</style>
