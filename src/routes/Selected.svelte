@@ -12,11 +12,12 @@
   }
 </script>
 
-<section>
+<section class="flex flex-col items-center gap-4">
   <h1>Vybraní</h1>
+
   <PlayersCounter />
 
-  <ol>
+  <ol class="flex flex-col items-center justify-center gap-2">
     {#each $Players.selected as player (player.id)}
       <li
         in:receive|local={{ key: player.id }}
@@ -24,6 +25,7 @@
         animate:flip={flipSettings}
       >
         <button
+          class="btn border-green-700 hover:border-red-800 hover:bg-red-500"
           on:click={() => {
             unselectPlayer(player);
           }}
@@ -34,34 +36,3 @@
     {/each}
   </ol>
 </section>
-
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  ol {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  button {
-    border: 2px solid var(--color-green-dark);
-  }
-  button:hover {
-    border: 2px solid var(--color-red);
-    background-color: var(--font-color-red);
-  }
-
-  @media screen and (min-width: 680px) {
-    section {
-      grid-row: 1 / 3;
-    }
-  }
-</style>

@@ -53,11 +53,3 @@ h1 {
 h2 {
   font-size: 1.5rem;
 }
-
-/* hover toggles visibility of controls for editing and deleting players */
-.controls {
-  display: none;
-}
-li:hover > .controls {
-  display: inline-flex;
-}

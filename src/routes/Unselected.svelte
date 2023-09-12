@@ -13,12 +13,13 @@
   const editableButtonPlaceholder = { id: -69, name: "" };
 </script>
 
-<section>
+<section class="flex flex-col items-center gap-4">
   <h1>Ostatní</h1>
 
-  <ol>
+  <ol class="flex flex-col items-center justify-center gap-2">
     {#each $Players.unselected.concat(editableButtonPlaceholder) as player (player.id)}
       <li
+        class="relative"
         in:receive|local={{ key: player.id }}
         out:send|local={{ key: player.id }}
         animate:flip={flipSettings}
@@ -32,30 +33,3 @@
     {/each}
   </ol>
 </section>
-
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  ol {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  li {
-    position: relative;
-  }
-
-  @media screen and (min-width: 680px) {
-    section {
-      grid-row: 1 / 3;
-    }
-  }
-</style>
