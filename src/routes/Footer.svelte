@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<footer class="p-3 text-center text-xs">
+<footer class="text-center text-xs">
   <span>Made by </span>
   <a class="text-blue-500" href="https://github.com/Bladesheng">Bladesheng</a>
   <span> | </span>

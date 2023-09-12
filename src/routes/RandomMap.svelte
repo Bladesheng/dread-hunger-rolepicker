@@ -18,31 +18,17 @@
   }
 </script>
 
-<section>
-  <h2>Random mapa</h2>
-  <button on:click={rollMap}>Roll</button>
-  {#key randomMap}
-    <p in:fly|local={{ x: -150 }} out:fly|local={{ x: 150 }}>{randomMap}</p>
-  {/key}
+<section class="flex flex-col gap-4">
+  <div class="flex items-center justify-between gap-4">
+    <h2 class="font-semibold">Random mapa</h2>
+    <button class="btn" on:click={rollMap}>Roll</button>
+  </div>
+
+  <div class="flex h-6 justify-center">
+    {#key randomMap}
+      <div class="fixed" in:fly|local={{ x: -150 }} out:fly|local={{ x: 150 }}>
+        {randomMap}
+      </div>
+    {/key}
+  </div>
 </section>
-
-<style>
-  section {
-    place-self: center;
-
-    display: grid;
-    grid-template-columns: min-content min-content;
-    grid-template-rows: min-content 1rem;
-    row-gap: 1rem;
-    column-gap: 2.8rem;
-    align-items: center;
-    justify-items: center;
-
-    white-space: nowrap;
-  }
-
-  p {
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-  }
-</style>

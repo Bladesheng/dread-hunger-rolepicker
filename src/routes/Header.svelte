@@ -5,45 +5,29 @@
 
 <header>
   <nav>
-    <ol>
+    <ol class="flex justify-center gap-4 text-lg text-stone-400">
       <li>
-        <a class:selected={$page.route.id === "/"} href="{base}/">Role Picker</a>
+        <a
+          class="border-b-2 border-solid active:border-blue-400 active:text-blue-400
+            {$page.route.id === '/'
+            ? 'border-stone-300 text-stone-300'
+            : 'border-transparent hover:border-stone-400'}"
+          href="{base}/"
+        >
+          Role Picker
+        </a>
       </li>
       <li>
-        <a class:selected={$page.route.id === "/about"} href="{base}/about">About</a>
+        <a
+          class="border-b-2 border-solid active:border-blue-400 active:text-blue-400
+            {$page.route.id === '/about'
+            ? 'border-stone-300 text-stone-300'
+            : 'border-transparent hover:border-stone-400'}"
+          href="{base}/about"
+        >
+          About
+        </a>
       </li>
     </ol>
   </nav>
 </header>
-
-<style>
-  header {
-    padding-top: 1rem;
-  }
-
-  ol {
-    display: flex;
-
-    justify-content: center;
-    gap: 16px;
-  }
-
-  a {
-    font-size: 1.1rem;
-    text-decoration: none;
-
-    color: var(--font-color-primary);
-    border-bottom: 2px solid transparent; /* stops buttons from moving when mousing over them */
-  }
-  a.selected {
-    color: var(--font-color-secondary);
-    border-bottom: 2px solid var(--font-color-secondary) !important;
-  }
-  a:hover {
-    border-bottom: 2px solid var(--font-color-primary);
-  }
-  a:active {
-    color: var(--font-color-blue) !important;
-    border-bottom: 2px solid var(--font-color-blue) !important;
-  }
-</style>
