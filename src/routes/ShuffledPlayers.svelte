@@ -127,12 +127,12 @@
   }
 </script>
 
-<section>
+<section class="flex flex-col items-center gap-4">
   <h1>Přidělené role</h1>
 
-  <ol>
+  <ol class="h-56 text-xl">
     {#each previousShuffledPlayers as { player, role } (player.id)}
-      <li>
+      <li class="flex justify-between gap-4 odd:bg-zinc-800">
         <span>
           {player.name}
         </span>
@@ -143,8 +143,9 @@
     {/each}
   </ol>
 
-  <div class="buttons">
+  <div>
     <button
+      class="btn"
       on:click={() => {
         // 8 is max ammount of players
         if ($Players.selected.length <= 8) {
@@ -153,45 +154,10 @@
       }}>Vylosovat</button
     >
     <button
+      class="btn"
       on:click={() => {
         copyToClipboard(previousShuffledPlayers);
       }}>Zkopírovat</button
     >
   </div>
 </section>
-
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  ol {
-    --font-size: 1.3rem;
-    font-size: var(--font-size);
-    height: calc(10 * var(--font-size));
-  }
-
-  li {
-    display: flex;
-    justify-content: space-between;
-    gap: 3ch;
-  }
-  li:nth-child(odd) {
-    background-color: var(--color-secondary);
-  }
-
-  span {
-    display: flex;
-    align-items: center;
-    text-align: center;
-  }
-
-  @media screen and (max-width: 960px) and (min-width: 680px) {
-    ol {
-      --font-size: 2.1vw;
-    }
-  }
-</style>

@@ -20,7 +20,7 @@
 
 <section class="flex flex-col gap-4">
   <div class="flex items-center justify-between gap-4">
-    <h2 class="font-semibold">Random mapa</h2>
+    <h2>Random mapa</h2>
     <button class="btn" on:click={rollMap}>Roll</button>
   </div>
 

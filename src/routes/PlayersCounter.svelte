@@ -7,11 +7,7 @@
 </script>
 
 <section>
-  <h2
-    class="font-semibold"
-    class:text-green-600={playerCount === 8}
-    class:text-red-500={playerCount > 8}
-  >
+  <h2 class:text-green-600={playerCount === 8} class:text-red-500={playerCount > 8}>
     {playerCount}/8 Hráčů
   </h2>
 </section>

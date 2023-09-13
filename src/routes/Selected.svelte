@@ -25,7 +25,7 @@
         animate:flip={flipSettings}
       >
         <button
-          class="btn border-green-700 hover:border-red-800 hover:bg-red-500"
+          class="btn border-green-700 hover:border-red-600"
           on:click={() => {
             unselectPlayer(player);
           }}
