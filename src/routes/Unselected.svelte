@@ -16,10 +16,10 @@
 <section class="flex flex-col items-center gap-4">
   <h1>Ostatní</h1>
 
-  <ol class="flex flex-col items-center justify-center gap-2">
+  <ol class="flex max-w-full flex-col items-center justify-center gap-2">
     {#each $Players.unselected.concat(editableButtonPlaceholder) as player (player.id)}
       <li
-        class="relative"
+        class="relative max-w-full"
         in:receive|local={{ key: player.id }}
         out:send|local={{ key: player.id }}
         animate:flip={flipSettings}

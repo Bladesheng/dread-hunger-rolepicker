@@ -130,10 +130,10 @@
 <section class="flex flex-col items-center gap-4">
   <h1>Přidělené role</h1>
 
-  <ol class="h-56 text-xl">
+  <ol class="h-56 w-full whitespace-nowrap text-xl">
     {#each previousShuffledPlayers as { player, role } (player.id)}
       <li class="flex justify-between gap-4 odd:bg-zinc-800">
-        <span>
+        <span title={player.name} class="overflow-hidden text-ellipsis">
           {player.name}
         </span>
         <span>

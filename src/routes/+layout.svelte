@@ -10,7 +10,7 @@
 >
   <Header />
 
-  <main class="flex flex-auto flex-col justify-around gap-6 sm:flex-row">
+  <main class="grid flex-auto grid-cols-1 gap-6 md:grid-cols-3">
     <slot />
   </main>
 

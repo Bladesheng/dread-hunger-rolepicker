@@ -61,7 +61,7 @@
   />
 {:else}
   <button
-    class="btn peer hover:border-green-700"
+    class="btn peer max-w-full overflow-hidden text-ellipsis hover:border-green-700"
     on:click={() => {
       selectPlayer(player);
     }}
