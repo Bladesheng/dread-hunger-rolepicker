@@ -160,6 +160,15 @@
         // 8 is max ammount of players
         if ($Players.selected.length <= 8) {
           handleShuffle();
+        } else {
+          toast.error(`Příliš mnoho vybraných hráčů (${$Players.selected.length}/8)`, {
+            position: "bottom-right",
+            style: "background: #27272a; color: #a8a29e",
+            iconTheme: {
+              primary: "#ef4444",
+              secondary: "#27272a",
+            },
+          });
         }
       }}>Vylosovat</button
     >
