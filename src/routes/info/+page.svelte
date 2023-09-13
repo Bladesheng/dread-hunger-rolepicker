@@ -9,7 +9,7 @@
   <a
     class="text-blue-500 underline"
     target="_blank"
-    href="https://bladesheng.github.io/dread-hunger-rolepicker/"
+    href="https://bladesheng.github.io/dread-hunger-rolepicker-0/"
   >
     Původní verze rolepickeru
   </a>

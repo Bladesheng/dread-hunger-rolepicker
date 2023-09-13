@@ -2,7 +2,7 @@
 
 ## About this repository
 
-I made the [original role picker](https://github.com/Bladesheng/dread-hunger-rolepicker) with React as a side project to learn how to use React hooks. This time I'm learning SvelteKit, so it seemed only natural to rewrite this as my first project to learn some basics of the framework.
+I made the [original role picker](https://github.com/Bladesheng/dread-hunger-rolepicker-0) with React as a side project to learn how to use React hooks. This time I'm learning SvelteKit, so it seemed only natural to rewrite this as my first project to learn some basics of the framework.
 
 Differences between the this version and the original one:
 
