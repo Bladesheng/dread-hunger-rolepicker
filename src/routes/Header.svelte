@@ -20,12 +20,12 @@
       <li>
         <a
           class="border-b-2 border-solid active:border-blue-400 active:text-blue-400
-            {$page.route.id === '/about'
+            {$page.route.id === '/info'
             ? 'border-stone-300 text-stone-300'
             : 'border-transparent hover:border-stone-400'}"
-          href="{base}/about"
+          href="{base}/info"
         >
-          About
+          Info
         </a>
       </li>
     </ol>
