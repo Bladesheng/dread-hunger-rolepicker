@@ -1,6 +1,7 @@
 <script>
   import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
+  import { Toaster } from "svelte-french-toast";
 
   import "../styles/app.css";
 </script>
@@ -15,4 +16,6 @@
   </main>
 
   <Footer />
+
+  <Toaster />
 </div>

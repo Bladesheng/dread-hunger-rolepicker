@@ -3,6 +3,7 @@
   // Remembers who got what role last time and makes sure nobody gets the same role twice in a row
 
   import { Players, type IPlayer } from "$lib/stores/players";
+  import toast from "svelte-french-toast";
 
   type IShuffledPlayers = {
     player: IPlayer;
@@ -107,6 +108,15 @@
     lines.unshift("```");
 
     await navigator.clipboard.writeText(lines.join("\n"));
+
+    toast.success("Zkopírováno do schránky", {
+      position: "bottom-right",
+      style: "background: #27272a; color: #a8a29e",
+      iconTheme: {
+        primary: "#16a34a",
+        secondary: "#27272a",
+      },
+    });
   }
 
   function handleShuffle() {
