@@ -51,6 +51,7 @@
 
 {#if editing}
   <input
+    class="btn peer"
     use:autofocus
     bind:value={inputValue}
     on:keyup={handleKeyup}
@@ -60,7 +61,7 @@
   />
 {:else}
   <button
-    class="player"
+    class="btn peer max-w-full overflow-hidden text-ellipsis hover:border-green-700"
     on:click={() => {
       selectPlayer(player);
     }}
@@ -69,58 +70,27 @@
   </button>
 {/if}
 
-<div class="controls">
-  <button class="edit" on:click={startEdit}>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
-      ><title>edit player name</title><path
+<div
+  class="absolute -right-8 top-2/4 hidden h-full -translate-y-1/2 translate-x-1/2 gap-2 pl-6 hover:inline-flex peer-hover:inline-flex"
+>
+  <button class="hover:text-stone-200" on:click={startEdit}>
+    <svg class="h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+      <title>Změnit jméno</title>
+      <path
         d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"
-      /></svg
-    >
+      />
+    </svg>
   </button>
 
   <button
-    class="delete"
+    class="hover:text-stone-200 active:text-red-500"
     on:click={() => {
       deletePlayer(player);
     }}
   >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
-      ><title>delete player</title><path
-        d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
-      /></svg
-    >
+    <svg class="h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+      <title>Smazat hráče</title>
+      <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" />
+    </svg>
   </button>
 </div>
-
-<style>
-  .player:hover {
-    border: 2px solid var(--color-green-dark);
-  }
-
-  .controls {
-    position: absolute;
-    height: 100%;
-    padding-left: 1.5ch;
-    gap: 1.5ch;
-  }
-
-  .controls > button {
-    display: flex;
-    align-items: center;
-    border: none;
-    background: none;
-    padding: 0;
-  }
-
-  svg {
-    height: 1.5rem;
-    color: var(--font-color-primary);
-  }
-  svg:hover {
-    color: var(--font-color-secondary);
-  }
-
-  .delete > svg:active {
-    color: var(--font-color-red);
-  }
-</style>

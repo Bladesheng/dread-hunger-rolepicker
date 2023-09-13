@@ -1,24 +1,9 @@
 <script>
 </script>
 
-<footer>
+<footer class="text-center text-xs">
   <span>Made by </span>
-  <a href="https://github.com/Bladesheng">Bladesheng</a>
+  <a class="text-blue-500" href="https://github.com/Bladesheng">Bladesheng</a>
   <span> | </span>
-  <a href="https://github.com/Bladesheng/dread-hunger-rolepicker-2">Source</a>
+  <a class="text-blue-500" href="https://github.com/Bladesheng/dread-hunger-rolepicker-2">Source</a>
 </footer>
-
-<style>
-  footer {
-    flex: 0 1 auto;
-
-    text-align: center;
-    padding: 0.65rem;
-    font-size: 0.65rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--font-color-blue);
-  }
-</style>

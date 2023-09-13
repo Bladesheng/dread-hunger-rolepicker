@@ -7,15 +7,7 @@
 </script>
 
 <section>
-  <h2 class:full={playerCount === 8} class:overflow={playerCount > 8}>{playerCount}/8 Hráčů</h2>
+  <h2 class:text-green-600={playerCount === 8} class:text-red-500={playerCount > 8}>
+    {playerCount}/8 Hráčů
+  </h2>
 </section>
-
-<style>
-  .full {
-    color: green;
-  }
-
-  .overflow {
-    color: red;
-  }
-</style>
