@@ -24,9 +24,9 @@
     <button class="btn" on:click={rollMap}>Roll</button>
   </div>
 
-  <div class="flex h-6 justify-center">
+  <div class="relative flex h-6 justify-center">
     {#key randomMap}
-      <div class="fixed" in:fly|local={{ x: -150 }} out:fly|local={{ x: 150 }}>
+      <div class="absolute whitespace-nowrap" in:fly|local={{ x: -150 }} out:fly|local={{ x: 150 }}>
         {randomMap}
       </div>
     {/key}

@@ -35,10 +35,10 @@
     <button class="btn" on:click={rollSpells}>Roll</button>
   </div>
 
-  <div class="flex h-6 justify-center">
+  <div class="relative flex h-6 justify-center">
     {#key randomSpells}
       <div
-        class="fixed"
+        class="absolute whitespace-nowrap"
         in:fly|local={{ x: -300, duration: 500 }}
         out:fly|local={{ x: 300, duration: 500 }}
       >
