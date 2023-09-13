@@ -8,9 +8,10 @@ Differences between the this version and the original one:
 
 - SvelteKit instead of React
 - Vite instead of Webpack
-- Vanila CSS instead of Sass
+- Tailwind instead of Sass
 - Deployment to Github Pages is done with custom github workflow and docker file
 - Docker container for local development
+- Toast notifications thanks to [Svelte French Toast](https://svelte-french-toast.com/)
 
 ### Original description:
 
@@ -30,18 +31,18 @@ Inspired by the [original role picker](https://dreadhunger.azurewebsites.net/) f
 
 - Clone the repository, then:
 
-```
+```sh
 npm install
 ```
 
-- Run development server with:
+- Run dev server with:
 
-```
+```sh
 npm run dev
 ```
 
-- You can also run the build and dev server in Docker container if you wish:
+- Alternatively, you can run the build and dev server in Docker container:
 
-```
+```sh
 npm run docker
 ```
